@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+            <h1 class="text-center">REGISTATION</h1>
+        <form>
+            <div class="form-group">
+                <label for="email">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name">
+              </div>
+              <div class="form-group">
+                <label for="email">Phone Number</label>
+                <input type="number" class="form-control" id="phone_number" placeholder="Enter Phone Number">
+              </div>
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email ID">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Confirm Password</label>
+            <input type="password" class="form-control" id="confirm_pwd" placeholder="Enter Confirm Password">
+          </div>
+          <div>
+            <div>
+                <h5>Gender</h5>
+                <label class="radio-inline"><input type="radio" name="optradio" id="male">Male</label>
+                <label class="radio-inline"><input type="radio" name="optradio" id="female">Female</label>
+            </div>
+        </div>
+          <div class="container">     
+            <button type="button"class="btn btn-primary btn-lg center-block" onclick="abc()">Submit</button>
+          </div>
+      </div>
+<script>
+  
+  function abc(){
+    var x = document.getElementById("name").value
+    if (x !== "" && x.length>=3) {
+        console.log('string length is >3');
+    } else {
+      console.log('string length is <3')
+    }
+    var n = document.getElementById("phone_number").value
+    if (n !== "" && n.length===10) {
+        console.log('ok');
+    } else {
+      console.log('please enter valid number')
+    }  
+    var y = document.getElementById("email").value
+    if (y !=="" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(y)) {
+         console.log('OK');
+    } else {
+      console.log('please enter valid email')
+    }
+    var p = document.getElementById("pwd").value
+    if (p !=="" && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(p)) {
+         console.log('Ok');
+    } else {
+      console.log('please enter valid password')
+    }
+    var cp = document.getElementById("confirm_pwd").value
+    if (cp !=="" && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(cp) && cp===p) {
+         console.log('yes');
+    } else {
+      console.log('please  reEnter valid password')
+    }
+    var m = document.getElementById("male").value
+    var fm = document.getElementById("female").value
+  
+  }
+</script>
+    
+</body>
+</html>
+
